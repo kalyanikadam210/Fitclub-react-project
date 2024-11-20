@@ -40,3 +40,15 @@ btn{
 .btn:hover{
   cursor: pointer;
 }
+
+.blur {
+  background: rgba(203, 110, 56, 0.69); /* Semi-transparent orange */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  filter: blur(150px); /* Applying blur effect */
+  z-index: -9; /* Ensure it stays behind other elements */
+}
