@@ -1,0 +1,83 @@
+/* .Footer-container */
+.Footer-container {
+    position: relative;
+}
+
+/* .Footer-container > hr */
+.Footer-container > hr {
+    border: 1px solid var(--lightgray); /* Assuming --lightgray is defined elsewhere */
+}
+
+/* Main footer layout */
+.footer {
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    position: relative; /* Ensure footer content is positioned above the blurred background */
+}
+
+/* Add a blurred orange background to the footer */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 160, 111, 0.9); /* Orange color with high opacity */
+    filter: blur(50px); /* Apply blur effect */
+    z-index: -9; /* Position it behind the content */
+}
+
+/* Styling for social links container */
+.social-Links {
+    display: flex;
+    gap: 4rem;
+}
+
+/* Social link icons */
+.social-Links > img {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+/* Logo size */
+.logo-f > img {
+    width: 10rem;
+}
+
+/* Optional: Styling for footer text */
+.footer p {
+    font-size: 1rem;
+    color: var(--lightgray); /* Adjust according to your theme */
+    margin-top: 1rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Optional shadow for readability */
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .social-Links {
+        flex-direction: column; /* Stack icons vertically on small screens */
+        gap: 1rem; /* Reduce gap between icons */
+    }
+
+    .social-Links > img {
+        width: 3rem; /* Increase icon size */
+        height: 3rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem; /* Adjust text size for smaller screens */
+    }
+}
+
+/* Hover effect for social icons */
+.social-Links > img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icons on hover */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
